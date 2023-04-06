@@ -16,6 +16,14 @@ appointmentRouter.post("/register", async (req, res) => {
     }
 })
 
+appointmentRouter.get("/", async (req, res) => {
+    try {
+        const appointment = await AppointmentModel.find({})
+        res.send({ "msg": appointment })
+    } catch (err) {
+        res.send({ "msg": err })
+    }
+})
 
 module.exports = {
     appointmentRouter
