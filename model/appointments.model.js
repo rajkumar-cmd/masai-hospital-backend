@@ -4,9 +4,9 @@ const appointmentSchema=mongoose.Schema({
     name:String,
     imageURL:String,
     specialization:String,
-    experience:String,
+    experience:Number,
     location:String,
-    date:Date,
+    date:String,
     slots:Number,
     fee:Number
 });

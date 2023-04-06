@@ -8,7 +8,7 @@ const appointmentRouter = express.Router();
 appointmentRouter.post("/register", async (req, res) => {
     const { name, imageURL, specialization, experience, location, date, slots, fee } = req.body;
     try {
-        const appointment = new AppointmentModel({ email, password: hash });
+        const appointment = new AppointmentModel({ name, imageURL, specialization, experience, location, date, slots, fee });
         await appointment.save();
         res.send({ "msg": "Appointments Saved" })
     } catch (err) {
